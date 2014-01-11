@@ -1,16 +1,16 @@
 CoffeeLint - Newline At End Of File
 ===================================
 
-# Description
+## Description
 This [CoffeeLint](http://www.coffeelint.org) plugin verifies whether or not your files end with a newline. You can customise its behaviour to either enforce newlines at the end of each file or to prohibit them.
 
-# Installation
+## Installation
 ```sh
 npm install coffeelint-newline-at-eof [--save-dev]
 ```
 *Note:* You might have to install the plugin as a global plugin ( `-g` ) if you use *coffeelint.json* in your `$HOME` directory.
 
-# Usage
+## Usage
 
 1. Generate or edit your *coffeelint.json* configuration file: this is usually done via `coffeelint --makeconfig > ~/coffeelint.json` for user-level coffeelint configurations
 1. Insert the below configuration into *coffeelint.json*
@@ -23,7 +23,7 @@ npm install coffeelint-newline-at-eof [--save-dev]
 }
 ```
 
-# Configuration
+## Configuration
 
 The only configuration option specific to this plugin is the **behaviour** property.
 
@@ -34,10 +34,10 @@ Available values are:
 
 By default, Coffeelint will report errors if this rule is not satisfied. You may want to relax this by setting the **level** to **warn** in your configuration.
 
-# Credits
+## Credits
 
 Thanks to [Matt Perpick](https://github.com/clutchski), the creator of [Coffeelint](https://github.com/clutchski/coffeelint) and to all contributors to the project for their excellent work.
 
-# License
+## License
 
 This software is licensed under the **BSD (3-Clause) License**. See the [LICENSE](LICENSE) file for more information.

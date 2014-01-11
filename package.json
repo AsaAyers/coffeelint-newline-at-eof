@@ -1,0 +1,40 @@
+{
+  "name": "coffeelint-newline-at-eof",
+  "version": "0.1.0",
+  "description": "Validates a newline policy at the end of each file",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dreamscapes/coffeelint-newline-at-eof.git"
+  },
+  "keywords": [
+    "coffeelint",
+    "coffee-lint",
+    "newline",
+    "rule",
+    "eof"
+  ],
+  "author": {
+    "name": "Robert Rossmann",
+    "email": "rr.rossmann@me.com",
+    "url": "http://about.me/rossmann"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Dreamscapes/coffeelint-newline-at-eof/issues"
+  },
+  "homepage": "https://github.com/Dreamscapes/coffeelint-newline-at-eof",
+  "dependencies": {
+    "coffee-script-redux": "~2.0.0-beta7"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-cli": "~1.5.0",
+    "grunt-coffeelint": "0.0.8",
+    "should": "~2.1.1"
+  }
+}

@@ -1,0 +1,10 @@
+# Some Mac garbage
+.DS_Store	
+#Some Win garbage
+thumbs.db
+
+node_modules
+npm-debug.log
+
+# Sublime Text project-specific files
+*.sublime-*

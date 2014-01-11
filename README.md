@@ -8,11 +8,11 @@ This [CoffeeLint](http://www.coffeelint.org) plugin verifies whether or not your
 ```sh
 npm install coffeelint-newline-at-eof [--save-dev]
 ```
-*Note:* You might have to install the plugin as a global plugin ( `-g` ) if you use *coffeelint.json* in your `$HOME` directory.
+***Note:*** *You might have to install the plugin as a global plugin ( `-g` ) if you use coffeelint.json in your `$HOME` directory.*
 
 ## Usage
 
-1. Generate or edit your *coffeelint.json* configuration file: this is usually done via `coffeelint --makeconfig > ~/coffeelint.json` for user-level coffeelint configurations
+1. Generate or edit your *coffeelint.json* configuration file: this is usually done via `coffeelint --makeconfig > ~/coffeelint.json` for user-level Coffeelint configurations
 1. Insert the below configuration into *coffeelint.json*
 
 ```js

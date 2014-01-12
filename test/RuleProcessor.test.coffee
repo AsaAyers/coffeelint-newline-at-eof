@@ -18,12 +18,21 @@ describe 'RuleProcessor', () ->
 
   # Define some frequently used vars used across the test suite
 
-  processor       = undefined # populated in beforeEach()
-  fakeAPI         = { isLastLine: () -> return true }
+  processor       = undefined         # populated in beforeEach()
+  fakeAPI         = undefined         # populated in beforeEach()
+  setBehaviour    = ( behaviour ) ->  # A switch helper to modify the tested behaviour on the fly
+    fakeAPI.config[processor.rule.name].behaviour = behaviour
 
   # Setup function to be executed before each test
   beforeEach () ->
     processor = new RuleProcessor
+    fakeAPI   =
+      isLastLine: () -> return true
+      config: {}
+
+    # This is where Coffeelint keeps its runtime configuration options for each rule
+    fakeAPI.config[processor.rule.name] =
+      behaviour: 'require'
 
 
   # Begin testing!
@@ -32,29 +41,24 @@ describe 'RuleProcessor', () ->
     processor.rule.should.have.property 'behaviour', 'require'
 
   it 'should do nothing when not on last line', () ->
-    result = processor.lintLine 'some content', { isLastLine: () -> return false }
+    fakeAPI.isLastLine = () -> return false   # Test-specific method override
+    result = processor.lintLine 'some content', fakeAPI
     should.not.exist result
 
   it 'should trigger on non-newline files if required', () ->
-    processor.rule.behaviour = 'require'  # Ensure that requirement is set
-
     result = processor.lintLine 'some content', fakeAPI
     result.should.have.property 'context'
 
   it 'should not trigger on newline files if required', () ->
-    processor.rule.behaviour = 'require'  # Ensure that requirement is set
-
     result = processor.lintLine '', fakeAPI
     should.not.exist result
 
   it 'should not trigger on non-newline files if forbidden', () ->
-    processor.rule.behaviour = 'forbid'  # Ensure that forbidding is set
-
+    setBehaviour 'forbid'  # Ensure that forbidding is set
     result = processor.lintLine 'some content', fakeAPI
     should.not.exist result
 
   it 'should trigger on newline files if forbidden', () ->
-    processor.rule.behaviour = 'forbid'  # Ensure that forbidding is set
-
+    setBehaviour 'forbid'  # Ensure that forbidding is set
     result = processor.lintLine '', fakeAPI
     result.should.have.property 'context'

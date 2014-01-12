@@ -24,8 +24,13 @@ class RuleProcessor
   lintLine: ( line, lineApi ) ->
 
     if lineApi.isLastLine()
-      if @rule.behaviour is 'require' and line.length isnt 0  then return { context: 'Expecting NEWLINE' }
-      if @rule.behaviour is 'forbid'  and line.length is 0    then return { context: 'Unexpected NEWLINE' }
+      # Read the current value of the behaviour property
+      # The lineApi.config object contains ALL configuration options defined in coffeelint.json - we need to access
+      # only ours, so we index it by the rule's name
+      behaviour = lineApi.config[@rule.name].behaviour
+
+      if behaviour is 'require' and line.length isnt 0  then return { context: 'Expecting NEWLINE' }
+      if behaviour is 'forbid'  and line.length is 0    then return { context: 'Unexpected NEWLINE' }
 
     # Not a last line of file
     else return null

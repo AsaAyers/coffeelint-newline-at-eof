@@ -1,4 +1,4 @@
-CoffeeLint - Newline At End Of File [![Build Status](https://api.travis-ci.org/Dreamscapes/coffeelint-newline-at-eof.png)](https://travis-ci.org/Dreamscapes/coffeelint-newline-at-eof)
+CoffeeLint - Newline At End Of File [![Build Status](https://api.travis-ci.org/Dreamscapes/coffeelint-newline-at-eof.png)](https://travis-ci.org/Dreamscapes/coffeelint-newline-at-eof) [![Dependency Status](https://gemnasium.com/Dreamscapes/coffeelint-newline-at-eof.png)](https://gemnasium.com/Dreamscapes/coffeelint-newline-at-eof)
 ===================================
 
 ## Description
